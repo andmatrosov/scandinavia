@@ -1,0 +1,29 @@
+// Mixins
+%Felix {
+	font-family: 'Felix Titling', sans-serif;
+	font-weight: 300;
+}
+
+%FuturaL {
+	font-family: 'Futura Light', sans-serif;
+	font-weight: 300;
+}
+
+%Futura {
+	font-family: 'Futura', sans-serif;
+	font-weight: normal;
+}
+
+%FuturaM {
+	font-family: 'Futura Medium', sans-serif;
+	font-weight: 500;
+}
+
+%FuturaB {
+	font-family: 'Futura Bold', sans-serif;
+	font-weight: bold;
+}
+
+@mixin opacityBg ($opacity) {
+	background: rgba(60, 70, 90, $opacity);;
+}
