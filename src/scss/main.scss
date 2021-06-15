@@ -406,7 +406,7 @@ section {
 	&__description {
 		margin-bottom: 35px;
 
-		@extend %FuturaM;
+		@extend %FuturaL;
 		font-size: 18px;
 		line-height: 24px;
 
@@ -692,6 +692,42 @@ section {
 	background-color: $darkGrey;
 	color: #fff;
 	
+	&--mobile {
+		display: none;
+		a {
+			color: #fff;
+			
+			@extend %Futura;
+
+			text-transform: uppercase;
+		}
+
+		&__social {
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			padding: 0 30px 35px;
+			
+			a {
+				font-size: 14px;
+			}
+
+			span {
+				display: block;
+				width: 10px;
+				height: 10px;
+				background-color: $mainColor;
+			}
+		}
+
+		&__contact {
+			display: flex;
+			justify-content: center;
+			font-size: 18px;
+			text-decoration: underline;
+		}
+	}
+
 	&__header {
 		position: relative;
 		padding-bottom: 30px;
@@ -739,11 +775,10 @@ section {
 	&__contacts {
 		display: flex;
 		justify-content: space-between;
+		padding: 43px 0 0;
 	}
 
 	&__item {
-		padding: 43px 0 0;
-
 		p {
 			margin: 10px 0;
 			font-size: 16px;
@@ -932,7 +967,16 @@ section {
 }
 
 @media only screen and (max-width: 767px) {
+	.content {
+		padding: 0 15px;
+
+		&__swiper {
+			max-width: 60%;
+		}
+	}
+	
 	.swiper {
+	
 		&-button{
 			&-prev{
 				left: -20px;
@@ -941,6 +985,17 @@ section {
 				right: -20px;
 			}
 		}
+	}
+
+	.title {
+		font-size: 40px;
+		line-height: 40px;
+		margin-bottom: 12px;
+	}
+
+	.subtitle {
+		margin-top: 12px;
+		margin-bottom: 65px;
 	}
 
 	.about {
@@ -958,11 +1013,13 @@ section {
 
 		&__text {
 			text-align: center;
-			width: 100%;
+			width: 95%;
+			margin: 0 auto;
 		}
 
 		&__subtitle {
 			&::after {
+				top: 45px;
 				left: 50%;
 				transform: translateX(-50%);
 			}
@@ -1036,15 +1093,58 @@ section {
 			display: flex;
 			flex-direction: column;
 			width: 100%;
+			&__card {
+
+				img {
+					object-fit: cover;
+				}
+			}
 			.btn {
 				margin: 20px auto;
 			}
+		}
+
+		&__text {
+			top: 70%;
 		}
 	}
 
 	.achievements {
 		&__item {
 			padding: 0 20px;
+		}
+	}
+
+	.footer {
+		&__header {
+			padding-left: 10px;
+			padding-right: 10px;
+			&:after {
+				left: 10px;
+			}
+		}
+		&__contacts {
+			padding: 0 10px;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			align-items: flex-start;
+		}
+		&__item {
+			padding-top: 20px;
+			&-social {
+				padding-right: 30px;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 320px) {
+	.footer {
+		&--desktop {
+			display: none;
+		}
+		&--mobile {
+			display: block;
 		}
 	}
 }
