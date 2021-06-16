@@ -2,39 +2,50 @@
 window.onload = () => {
   document.querySelector('.preloader').classList.add('loaded');
 
-  // document.querySelector('#preloader').style.display = 'none';
-  if(document.body.clientWidth > 767 ) {
-    aboutImgResize();
+  if (document.body.offsetWidth >= 909 - widthScroll()) {
+    aboutImgResize('desk');
+  } else if (document.body.offsettWidth <= 909 - widthScroll()) {
+    console.log('Задание высоты при загрузке')
+    aboutImgResize('mobile');
   }
 };
 
 window.addEventListener('resize', () => {
-  if (document.body.clientWidth > 480) {
-    aboutImgResize();
-  } else {
-    mobileSlider();
+  // При ресайзе окна проверяем условие
+  if (document.body.offsetWidth > 909 - widthScroll()) {
+    aboutImgResize('desk'); //Если это условие верно, ресайзим блок с картинкой
+  } else if (document.body.offsetWidth <= 909 - widthScroll()) {
+    aboutImgResize('mobile'); // Если это условие верно, удаляем инлайн стили
   }
 });
 
-function aboutImgResize () {
+function aboutImgResize (wide) {
   let aboutText = document.querySelector('.about__text');
   let aboutImg = document.querySelector('.about__image');
-
-  aboutImg.style.height = aboutText.offsetHeight + 'px';
+ 
+    if(wide === 'desk') {
+      aboutImg.style.height = aboutText.offsetHeight + 'px';
+    } else if (wide === 'mobile') {
+      aboutImg.removeAttribute('style');
+    }
+  
 }
 
-function mobileSlider() {
-  let sliderThumb =  document.querySelector('.slider--mobile .slider__card'),
-      slideWidth = sliderThumb.offsetWidth,
-      slideHeight = sliderThumb.offsetHeight;
-
-  if(document.body.clientWidth <= 480) {
-    sliderThumb.style.height = sliderWidth * 1.2 + 'px';
-  } else {
-    break;
-  }
-
+// Находим ширину скроллбара
+function widthScroll(){
+  var div = document.createElement('div');
+  div.style.overflowY = 'scroll';
+  div.style.width = '50px';
+  div.style.height = '50px';
+  div.style.visibility = 'hidden';
+  document.body.appendChild(div);
+  var scrollWidth = div.offsetWidth - div.clientWidth;
+  document.body.removeChild(div);
+  return scrollWidth;
 }
+
+console.log(widthScroll());
+
 
 const projectsSlider = new Swiper('.projects-slider', {
   // Optional parameters
@@ -50,7 +61,7 @@ const projectsSlider = new Swiper('.projects-slider', {
       slidesPerView: 1,
     },
 
-    830: {
+    767: {
       slidesPerView: 2,
     },
     1070: {
@@ -86,7 +97,7 @@ const teamSlider = new Swiper('.team-slider', {
       slidesPerView: 1,
     },
 
-    830: {
+    767: {
       slidesPerView: 2,
     },
     1070: {
