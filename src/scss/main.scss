@@ -810,9 +810,10 @@ section {
 	&__copy {
 		display: flex;
 		justify-content: center;
+		padding-top: 10px;
 		p {
 			@extend %FuturaM;
-			margin: 20px 0 0;
+			// margin: 20px 0 0;
 		}
 	}
 }
@@ -917,13 +918,14 @@ section {
 		}
 
 		&__description {
-			margin-bottom: 10px;
+			margin-bottom: 0;
 		}
 		&__btn {
 			background-color: $mainColor;
-			color: #fff;
+			color: $darkGrey;
 			transform: none;
 			box-shadow: none;
+			margin-left: 0;
 			&:hover {
 				background-color: #fff;
 				color: $darkGrey;
@@ -964,6 +966,8 @@ section {
 	}
 	
 	.about {
+		padding-top: 50px;
+
 		&__main {
 			flex-direction: column-reverse;
 		}
@@ -1024,7 +1028,7 @@ section {
 
 	.subtitle {
 		margin-top: 12px;
-		margin-bottom: 65px;
+		margin-bottom: 30px;
 	}
 
 	.about {
@@ -1049,6 +1053,13 @@ section {
 				top: 45px;
 				left: 50%;
 				transform: translateX(-50%);
+			}
+		}
+
+		&__btn {
+			&-tablet {
+				padding: 0;
+				margin: 50px 0 0;
 			}
 		}
 	}
@@ -1128,18 +1139,19 @@ section {
 				}
 			}
 			.btn {
-				margin: 20px auto;
+				margin: 20px auto 0;
 			}
 		}
 
 		&__text {
-			top: 70%;
+			top: 0;
 			padding-top: 20%;
 			padding-left: 10%;
 			padding-right: 12%;
 
 			font-size: 18px;
 			text-align: center;
+			@include opacityBg(.7);
 		}
 	}
 
@@ -1157,6 +1169,7 @@ section {
 			&-img {
 				width: 33px;
 				height: 33px;
+				margin-right: 10px;
 			}
 			&-text {
 				font-size: 22px;
@@ -1244,15 +1257,19 @@ section {
 	}
 
 	.team {
+		&__header {
+			margin-bottom: 0;
+		}
 		&-slider{
 			&__title {
+				margin-bottom: 100px;
 				&:after{
 					left: 50%;
 					transform: translateX(-50%);
 				}
 			}
 			&__text{
-				top: 100%;
+				top: 0;
 			}
 		}
 	}
@@ -1281,6 +1298,9 @@ section {
 }
 
 @media only screen and (max-width: 320px) {
+	body {
+		min-width: 320px;
+	}
 	.slider {
 		&__text {
 			font-size: 16px;
