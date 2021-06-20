@@ -199,6 +199,105 @@ section {
 	}
 }
 
+.mobile-menu {
+	position: fixed;
+	top: 0;
+	left: -110%;
+	width: 81%;
+	height: 100vh;
+	padding: 20px 25px;
+	background-color: $darkGrey;
+	box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, .4);
+	transition: all .3s;
+	overflow: hidden;
+	z-index: 99;
+
+	&--active {
+	left: 0;
+	}
+
+	&__close {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 63px;
+		height: 53px;
+		margin: -20px -25px;
+		
+		&-symbol {
+			position: relative;
+			display: block;
+			width: 25px;
+			height: 25px;
+
+			span {
+				position: absolute;
+				top: 48%;
+				left: -3px;
+				display: block;
+				width: 30px;
+				height: 3px;
+				border-radius: 3px;
+				background-color: #fff;
+				transform-origin: center center;
+				&:first-child {
+					transform: rotate(45deg);
+				}
+				&:last-child {
+					transform: rotate(135deg);
+				}
+			}
+		}
+	}
+
+	&__list {
+		margin-top: 60px;
+		ul li {
+			margin-bottom: 30px;
+		}
+	}
+
+	&__link {
+		font-size: 24px;
+		line-height: 22px;
+		color: #fff;
+
+		&--active {
+			position: relative;
+
+			&:after {
+				content: "";
+				position: absolute;
+				bottom: -8px;
+				left: 0;
+
+				width: 60px;
+				height: 3px;
+
+				background-color: $mainColor;
+			}
+		}
+	}
+
+	&__lang {
+		position: absolute;
+		bottom: 20px;
+		right: 25px;
+		@extend %Futura;
+
+		&-btn {
+			color: #fff;
+			font-size: 16px;
+			line-height: 22px;
+			&--active {
+				@extend %FuturaM;
+
+				color: $mainColor;
+			}
+		}
+	}
+}
+
 .humburger {
 	display: none;
 }
@@ -856,6 +955,12 @@ section {
 		}
 	}
 
+	.slider {
+		&__text {
+			padding: 10% 8%;
+		}
+	}
+
 	.achievements {
 		&__item {
 			&-header {
@@ -874,6 +979,14 @@ section {
 			}
 			> span {
 				font-size: 15px;
+			}
+		}
+	}
+
+	.team {
+		&-slider {
+			&__title {
+				margin-bottom: 40px;
 			}
 		}
 	}
@@ -1190,7 +1303,6 @@ section {
 		width: 63px;
 		height: 53px;
 		
-		
 		span {
 			display: block;
 			width: 25px;
@@ -1262,7 +1374,7 @@ section {
 		}
 		&-slider{
 			&__title {
-				margin-bottom: 100px;
+				margin-bottom: 80px;
 				&:after{
 					left: 50%;
 					transform: translateX(-50%);

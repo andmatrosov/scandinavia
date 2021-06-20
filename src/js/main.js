@@ -11,13 +11,15 @@ window.onload = () => {
 };
 
 window.addEventListener('resize', () => {
-  // При ресайзе окна проверяем условие
+  // При ресайзе окна проверяем условия
+
   if (document.body.offsetWidth > 909 - widthScroll()) {
     aboutImgResize('desk'); //Если это условие верно, ресайзим блок с картинкой
   } else if (document.body.offsetWidth <= 909 - widthScroll()) {
     aboutImgResize('mobile'); // Если это условие верно, удаляем инлайн стили
   }
 });
+
 
 function aboutImgResize (wide) {
   let aboutText = document.querySelector('.about__text');
@@ -44,7 +46,20 @@ function widthScroll(){
   return scrollWidth;
 }
 
-console.log(widthScroll());
+// Мобильное меню
+let mobileMenuBtns = [
+      document.querySelector('.humburger'),
+      document.querySelector('.mobile-menu__close')
+    ],
+    mobileMenu = document.querySelector('.mobile-menu');
+
+
+mobileMenuBtns.forEach((event) => {
+  event.addEventListener('click', (e) => {
+    e.preventDefault()
+    mobileMenu.classList.toggle('mobile-menu--active')
+  })
+})
 
 
 const projectsSlider = new Swiper('.projects-slider', {
