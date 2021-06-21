@@ -21,6 +21,40 @@ window.addEventListener('resize', () => {
 });
 
 
+
+
+const appHeight = () => {
+  const doc = document.documentElement
+  doc.style.setProperty('--app-height', `${window.innerHeight}px`)
+}
+window.addEventListener('resize', appHeight)
+appHeight()
+
+
+// When the user scrolls the page, execute myFunction
+window.onscroll = function() {headerBg()};
+
+// Get the navbar
+var header = document.querySelector('.header');
+
+// Get the offset position of the navbar
+var sticky = header.offsetHeight;
+
+// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function headerBg() {
+  console.log(`Высота шапки: ${header.offsetHeight}\nВысота прокрутки: ${window.pageYOffset}`)
+  if (window.pageYOffset > sticky) {
+    header.classList.add('header--light')
+  } else if (window.pageYOffset < sticky) {
+    console.log('work?')
+    header.classList.remove('header--light');
+  }
+}
+
+
+
+
+
 function aboutImgResize (wide) {
   let aboutText = document.querySelector('.about__text');
   let aboutImg = document.querySelector('.about__image');

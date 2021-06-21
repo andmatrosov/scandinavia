@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+	<style>
+		:root {
+  --height-fix: 100%;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  height: var(--height-fix);
+}
+
+.header {
+  padding: 16px 0;
+
+  background-color: lightblue;
+
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.main {
+  width: 90%;
+  margin: 0 auto;
+  padding-bottom: 60px;
+}
+
+.bottom-bar {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 80%;
+  margin: 0 auto;
+  padding: 16px 0;
+
+  display: flex;
+  justify-content: space-around;
+
+  background-color: coral;
+
+  border-radius: 10px;
+}
+
+	</style>
+</head>
+<body>
+	<div class="header">
+		<p>Header</p>
+	</div>
+	<div class="main">
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, perferendis. Accusamus iure earum ipsa eaque officiis! Doloremque, necessitatibus dolor quam architecto voluptas fuga in, a commodi iste harum reiciendis dolore. Earum aperiam harum quod excepturi illum, exercitationem laudantium minus consectetur distinctio repudiandae obcaecati atque sed. Sapiente accusantium animi fugiat quasi?</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore odio doloribus ab, voluptatibus repudiandae sequi asperiores cumque porro maxime iure hic autem accusantium dolore quasi accusamus, quas voluptates distinctio neque!</p>
+		<p>Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Парадигматическая, подзаголовок снова переписали всемогущая семь ее? Власти страна агентство живет подзаголовок первую бросил всемогущая рекламных великий правилами, пустился океана?</p>
+		<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione ullam officia, cumque eos quam perferendis modi tempore dolores, vitae, vero eius laudantium recusandae sint! Ipsam!</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis dignissimos deserunt, perspiciatis dolores aperiam deleniti mollitia exercitationem quisquam in quibusdam. Ducimus aliquid sapiente omnis asperiores doloribus provident porro iusto obcaecati, iure unde explicabo voluptatum praesentium totam atque natus voluptatibus repellendus dolore cumque nemo facilis a ratione dignissimos nihil in? Veritatis animi iste natus quis sapiente fuga non inventore eius! Cum neque, sequi commodi placeat voluptatem fugiat consequuntur eius magni dolor nesciunt laborum, sapiente odit perspiciatis itaque, asperiores similique? Magnam doloribus sit, labore deserunt veniam reprehenderit expedita culpa, ullam fugiat voluptatem aliquid accusamus esse. Tenetur provident eum consequatur vitae deserunt doloribus!</p>
+	</div>
+	<div class="bottom-bar">
+		<span>Главная</span>
+		<span>Новости</span>
+		<span>Сообщения</span>
+		<span>Профиль</span>
+	</div>
+
+	<script>
+		const appHeight = () => {
+  const doc = document.documentElement;
+		doc.style.setProperty("--height-fix", `${window.innerHeight}px`);
+		console.log("work");
+	};
+	window.addEventListener("resize", appHeight);
+	appHeight();
+
+	</script>
+</body>
+</html>
