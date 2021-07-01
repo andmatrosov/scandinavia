@@ -25,12 +25,15 @@ a {
 
 html {
 	font-size: 100%;
+	height: 100%;
 }
 
 body {
 	position: relative;
+	// display: flex;
+	// flex-direction: column;
 	width: 100%;
-	height: 100vh;
+	height: 100%;
 	height: var(--app-height);
 	padding: 0;
 	margin: 0 auto;
@@ -147,7 +150,9 @@ section {
 	}
 }
 
+
 .header {
+
 	.container {
 		display: flex;
 		justify-content: space-between;
@@ -330,6 +335,10 @@ section {
 	@extend %FuturaM;
 	font-size: 60px;
 	line-height: 60px;
+	
+	&--center{
+		text-align: center;
+	}
 }
 
 .subtitle {
@@ -343,10 +352,14 @@ section {
 	position: relative;
 	display: flex;
 	width: 100%;
-	height: calc(100vh - 79px);
 	min-height: 550px;
+	height: calc(100vh - 79px);
 	padding: 0;
 	
+	&__projects {
+		display: none;
+	}
+
 	&__content {
 		position: relative;
 
@@ -571,8 +584,6 @@ section {
 
 	&__card {
 		position: relative;
-		// display: flex;
-		// max-width: 315px;
 		height: 375px;
 		overflow: hidden;
 
@@ -602,9 +613,6 @@ section {
 		padding: 40px 47px 30px;
 		font-size: 16px;
 		color: #fff;
-		// overflow-y: auto;
-		// overflow: -moz-scrollbars-none;
-		// &::-webkit-scrollbar { width: 0; }
 
 		@include opacityBg(0.0);
 
@@ -643,7 +651,7 @@ section {
 	}
 }
 
-.projects {
+.our-projects {
 	padding: 50px 0;
 
 	&__title {
@@ -802,9 +810,13 @@ section {
 }
 
 .footer {
+	position: relative;
+	left: 0;
+	bottom: 0;
 	padding: 40px 0 20px;
 	background-color: $darkGrey;
 	color: #fff;
+
 	
 	&--mobile {
 		display: none;
@@ -915,7 +927,6 @@ section {
 		padding-top: 10px;
 		p {
 			@extend %FuturaM;
-			// margin: 20px 0 0;
 		}
 	}
 }
@@ -1232,6 +1243,9 @@ section {
 	}
 
 	.fs {
+		&__projects {
+			display: flex;
+		}
 		top: 0;
 		height: 100vh;
 		&__content {
@@ -1393,127 +1407,6 @@ section {
 		}
 	}
 
-	// .header {
-	// 	position: fixed;
-	// 	width: 100%;
-	// 	height: 53px;
-	// 	padding: 0;
-	// 	left: 0;
-	// 	top: 0;
-	// 	z-index: 1;
-	// 	color: #fff;
-	// 	transition: .3s;
-
-	// 	&__logo {
-	// 		margin-left: 0;
-	// 		&-img {
-	// 			width: 33px;
-	// 			height: 33px;
-	// 			margin-right: 10px;
-	// 		}
-	// 		&-text {
-	// 			font-size: 22px;
-	// 		}
-	// 	}
-
-	// 	.phone {
-	// 		display: flex;
-	// 		justify-content: center;
-	// 		width: 63px;
-	// 		height: 53px;
-	// 		padding: 14px 0;
-	
-	// 		.icon {
-	// 				fill: #fff;
-	// 		}
-	// 	}
-
-	// 	&--light {
-	// 		background-color: #fff;
-	// 		transition: .3s;
-	// 		box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, .2);
-
-	// 		.header{
-	// 			&__logo {
-	// 				&-text {
-	// 					color:$darkGrey;
-	// 				}
-	// 			}
-	// 		}
-
-	// 		.humburger {
-	// 			span {
-	// 				background-color: $darkGrey;
-	// 			}
-	// 		}
-
-	// 		.phone .icon {
-	// 			fill: $darkGrey;
-	// 		}
-	// 	}
-	// }
-
-	
-
-	// .menu {
-	// 	display: none;
-	// }
-
-	// .humburger {
-	// 	display: flex;
-	// 	flex-direction: column;
-	// 	justify-content: space-between;
-	// 	align-items: center;
-	// 	padding: 16px 0;
-	// 	width: 63px;
-	// 	height: 53px;
-		
-	// 	span {
-	// 		display: block;
-	// 		width: 25px;
-	// 		height: 3px;
-	// 		background-color: #fff;
-	// 		border-radius: 2px;
-	// 	}
-	// }
-
-	// .fs {
-	// 	top: 0;
-	// 	height: 100vh;
-	// 	&__content {
-	// 		padding: 0;
-	// 	}
-
-	// 	&__wrapp {
-	// 		display: flex;
-	// 		flex-direction: column;
-	// 		justify-content: center;
-	// 		align-items: center;
-	// 	}
-
-	// 	&__title {
-	// 		max-width: 90%;
-	// 		font-size: 30px;
-	// 		text-align: center;
-	// 		&:before {
-	// 			left: 50%;
-	// 			transform: translateX(-50%);
-	// 		}
-	// 	}
-
-	// 	&__btn {
-	// 		padding: 18px 60px;
-	// 		align-self: center;
-	// 	}
-
-	// 	&__lang {
-	// 		display: none;
-	// 	}
-	// 	&__social {
-	// 		display: none;
-	// 	}
-	// }
-
 	.about {
 		&__image {
 			display: none;
@@ -1601,3 +1494,5 @@ section {
 // @media only screen and (min-width: 768px) and (max-width: 991px){ ... }
 
 // @media only screen and (min-width: 992px){ ... }
+
+@import 'projects';

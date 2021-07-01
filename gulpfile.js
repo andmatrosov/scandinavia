@@ -89,7 +89,7 @@ function js(cb) {
       plumber()
     )
     .pipe(sourcemaps.init()) //Инициализируем sourcemap
-    .pipe(concat('main.js'))
+    // .pipe(concat('main.js'))
     .pipe(sourcemaps.write()) //Пропишем карты
     .pipe(terser()) //Сжатие JS
     .pipe(gulp.dest(path.dist.script)) //Выплюнем готовый файл в build

@@ -12,16 +12,12 @@ window.onload = () => {
 
 window.addEventListener('resize', () => {
   // При ресайзе окна проверяем условия
-
   if (document.body.offsetWidth > 909 - widthScroll()) {
     aboutImgResize('desk'); //Если это условие верно, ресайзим блок с картинкой
   } else if (document.body.offsetWidth <= 909 - widthScroll()) {
     aboutImgResize('mobile'); // Если это условие верно, удаляем инлайн стили
   }
 });
-
-
-
 
 const appHeight = () => {
   const doc = document.documentElement
@@ -42,29 +38,33 @@ var sticky = header.offsetHeight;
 
 // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
 function headerBg() {
-  console.log(`Высота шапки: ${header.offsetHeight}\nВысота прокрутки: ${window.pageYOffset}`)
+
   if (window.pageYOffset > sticky) {
     header.classList.add('header--light')
   } else if (window.pageYOffset < sticky) {
-    console.log('work?')
     header.classList.remove('header--light');
   }
 }
 
 
-
-
-
 function aboutImgResize (wide) {
-  let aboutText = document.querySelector('.about__text');
-  let aboutImg = document.querySelector('.about__image');
- 
+
+  // console.log(document.querySelector('.about__text'))
+
+  if(document.querySelector('.about__text') !== null && document.querySelector('.about__image') !== null ){
+
+    let aboutText = document.querySelector('.about__text');
+
+    let aboutImg = document.querySelector('.about__image');
+  
     if(wide === 'desk') {
       aboutImg.style.height = aboutText.offsetHeight + 'px';
     } else if (wide === 'mobile') {
       aboutImg.removeAttribute('style');
     }
-  
+  } else {
+    return false;
+  }
 }
 
 // Находим ширину скроллбара
@@ -96,73 +96,27 @@ mobileMenuBtns.forEach((event) => {
 })
 
 
-const projectsSlider = new Swiper('.projects-slider', {
-  // Optional parameters
-  direction: 'horizontal',
-  loop: true,
-  allowTouchMove: false,
-  slidesPerView: 3,
-  spaceBetween: 30,
+// Отключить действие поумолчанию у ссылок
+let prevDef = Array.prototype.slice.call(document.querySelectorAll('.prevDef'));
 
 
-  breakpoints: {
-    480: {
-      slidesPerView: 1,
-    },
-
-    767: {
-      slidesPerView: 2,
-    },
-    1070: {
-      slidesPerView: 3,
-    }
-  },
-
-  // If we need pagination
-  pagination: {
-    el: '.projects-pagination',
-  },
-
-  // Navigation arrows
-  navigation: {
-    nextEl: '.projects-button-next',
-    prevEl: '.projects-button-prev',
-  },
-
-});
+prevDef.forEach((event) => {
+  event.addEventListener('click', (e) => {
+    e.preventDefault()
+  })
+})
 
 
-const teamSlider = new Swiper('.team-slider', {
-  // Optional parameters
-  direction: 'horizontal',
-  loop: true,
-  allowTouchMove: false,
-  slidesPerView: 3,
-  spaceBetween: 30,
 
+let yearBuilds = Array.prototype.slice.call(document.querySelectorAll('.projects__filters-year__link'));
 
-  breakpoints: {
-    480: {
-      slidesPerView: 1,
-    },
+yearBuilds.forEach((event) => {
+  event.addEventListener('click', (e) => {
+    yearBuilds.forEach((el) => {
+      el.classList.remove('active');
+    });
 
-    767: {
-      slidesPerView: 2,
-    },
-    1070: {
-      slidesPerView: 3,
-    }
-  },
-
-  // If we need pagination
-  pagination: {
-    el: '.team-pagination',
-  },
-
-  // Navigation arrows
-  navigation: {
-    nextEl: '.team-button-next',
-    prevEl: '.team-button-prev',
-  },
-
-});
+    // console.log(e.path[0]);
+    e.path[0].classList.add('active');
+  })
+})

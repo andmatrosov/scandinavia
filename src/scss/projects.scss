@@ -1,0 +1,294 @@
+.projects {
+	&__header {
+		width: 100%;
+	}
+
+	&__card {
+		&-info {
+			position: absolute;
+			right: 0;
+			bottom: 0;
+
+			display: flex;
+			flex-direction: row;
+			
+			height: 80px;
+
+			z-index: 9;
+		}
+
+		&-text {
+			min-width: 100%;
+			padding: 15px 100px 15px 20px;
+			background-color: #fff;
+		}
+
+		&-title {
+			margin: 0;
+			margin-bottom: 6px;
+		}
+		
+		&-subtitle {
+			margin: 0;
+			font-size: 18px;
+			color: rgba($darkGrey, 0.5);
+		}
+
+		&-link {
+			display: inline-block;
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 80px;
+			height: 80px;
+			background-color: $mainColor;
+			background-image: url('../img/icons/arrow-right.png');
+			background-repeat: no-repeat;
+			background-position: center center;
+		}
+	}
+
+	&__fs {
+		margin-top: -50px;
+		&-project {
+			position: relative;
+			width: 100%;
+			max-width: 1240px;
+			height: calc(100vw / 1.7);
+			max-height: 735px;
+			
+			margin: 0 auto;
+			
+			background-color: #ccc;
+			
+			overflow: hidden;
+
+			img {
+				position: relative;
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				object-position: center center;
+				z-index: 0;
+			}
+		}
+	}
+
+	&__filters {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+
+		&-title {
+			font-weight: bold;
+			margin-right: 80px;
+
+			&--mobile {
+				display: none;
+			}
+		}
+
+		&-item {
+			position: relative;
+			padding-right: 22px;
+			margin-right: 50px;
+
+			&::after {
+				content: "";
+				position: absolute;
+				top: 5px;
+				right: 0;
+				width: 10px;
+				height: 10px;
+
+				background-image: url('../svg/next.svg');
+				fill: $darkGrey;
+			}
+		}
+
+		&-year {
+			ul {
+				border-bottom: 1px solid rgba($darkGrey, 0.3);
+
+				li {
+					display: inline-block;
+				}
+			}
+
+			&__link {
+				position: relative;
+				display: inline-block;
+				padding: 7px 25px;
+
+				&.active::after {
+					content: "";
+					position: absolute;
+					width: 100%;
+					height: 3px;
+					bottom:-2px;
+					left: 0;
+
+					background-color: $mainColor;
+				}
+			}
+		}
+
+		&--mobile {
+			position: relative;
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			width: 100%;
+
+			overflow: hidden;
+
+			label {
+				display: inline-block;
+				background-color: #fff;
+				z-index: 9;
+			}
+
+			ul {
+				display: inline-block;
+				position: absolute;
+				// top: -100px;
+				width: 100%;
+				height: 80px;
+				max-height: 0;
+				transition: max-height 0.3s ease-in;
+
+				z-index: 1;
+			}
+			
+			input[type=checkbox] {
+				display: none;
+			}
+
+			input[type=checkbox]:checked {
+				~ ul {
+					position: relative;
+					// top: 0;
+					max-height: 80px;
+
+				}
+			}
+		}
+	}
+
+	&__catalog {
+		&-list {
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+
+			padding-top: 50px;
+		}
+
+		&-card {
+			position: relative;
+			width: 442px;
+			height: 525px;
+
+			margin-bottom: 50px;
+			background-color: #ccc;
+			overflow: hidden;
+
+			img {
+				position: relative;
+				width: 100%;
+				height: 100%;
+
+				object-fit: cover;
+				object-position: center;
+				
+				filter: brightness(60%);
+
+				transition: .3s;
+			}
+
+			.projects__card {
+				&-text {
+					margin-left: 100%;
+					transition: .5s;
+				}
+
+				&-link {
+					background-color: #f4f4f4;
+					transition: .5s;
+				}
+			}
+
+			&:hover {
+				img {
+					filter: brightness(90%)
+				}
+
+				.projects__card {
+					&-text {
+						margin-left: 0;
+						transition: .5s;
+					}
+	
+					&-link {
+						background-color: $mainColor;
+						transition: .5s;
+					}
+				}
+			}
+		}
+	}
+
+	&__pagination {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		ul {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+		}
+		&-item {
+			display: inline-block;
+			font-weight: bold;
+		}
+
+		&-link {
+			display: inline-block;
+			padding: 10px 15px;
+			font-size: 18px;
+			color: rgba($darkGrey, 0.3);
+			&--active {
+				color: rgba($darkGrey, 1);
+
+			}
+
+			&:hover {
+				color: rgba($darkGrey, 1);
+			}
+		}
+
+		&-prev,
+		&-next {
+			display: inline-block;
+			width: 30px;
+			height: 17px;
+			background-position: center center;
+			background-repeat: no-repeat;
+			&:hover {
+				opacity: 1;
+			}
+		}
+
+		&-prev {
+			background-image: url('../img/icons/arrow-left.png');
+			opacity: 0.5;
+		}
+
+		&-next {
+			background-image: url('../img/icons/arrow-right.png');
+		}
+	}
+}
