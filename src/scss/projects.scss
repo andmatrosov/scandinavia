@@ -4,6 +4,27 @@
 	}
 
 	&__card {
+		position: relative;
+		width: 442px;
+		height: 525px;
+
+		margin-bottom: 50px;
+		background-color: #ccc;
+		overflow: hidden;
+
+		img {
+			position: relative;
+			width: 100%;
+			height: 100%;
+
+			object-fit: cover;
+			object-position: center;
+			
+			filter: brightness(60%);
+
+			transition: .3s;
+		}
+
 		&-info {
 			position: absolute;
 			right: 0;
@@ -14,20 +35,22 @@
 			
 			height: 80px;
 
-			z-index: 9;
 		}
 
 		&-text {
 			min-width: 100%;
 			padding: 15px 100px 15px 20px;
 			background-color: #fff;
+
+			margin-left: 100%;
+			transition: .5s;
 		}
 
 		&-title {
 			margin: 0;
 			margin-bottom: 6px;
 		}
-		
+
 		&-subtitle {
 			margin: 0;
 			font-size: 18px;
@@ -45,6 +68,27 @@
 			background-image: url('../img/icons/arrow-right.png');
 			background-repeat: no-repeat;
 			background-position: center center;
+
+			background-color: #f4f4f4;
+			transition: .5s;
+		}
+
+		&:hover {
+			img {
+				filter: brightness(90%)
+			}
+
+			.projects__card {
+				&-text {
+					margin-left: 0;
+					transition: .5s;
+				}
+
+				&-link {
+					background-color: $mainColor;
+					transition: .5s;
+				}
+			}
 		}
 	}
 
@@ -71,6 +115,18 @@
 				object-position: center center;
 				z-index: 0;
 			}
+		}
+
+		&-info {
+			width: auto;
+		}
+
+		&-text {
+			margin-left: 0;
+		}
+
+		&-link {
+			background-color: $mainColor;
 		}
 	}
 
@@ -109,6 +165,7 @@
 		}
 
 		&-year {
+			min-width: 324px;
 			ul {
 				border-bottom: 1px solid rgba($darkGrey, 0.3);
 
@@ -136,8 +193,9 @@
 		}
 
 		&--mobile {
+			display: none;
 			position: relative;
-			display: flex;
+			// display: flex;
 			justify-content: center;
 			flex-direction: column;
 			width: 100%;
@@ -145,21 +203,29 @@
 			overflow: hidden;
 
 			label {
+				cursor: pointer;
 				display: inline-block;
 				background-color: #fff;
-				z-index: 9;
+				padding: 20px 25px;
+				margin-bottom: 10px;
+				z-index: 1;
 			}
 
 			ul {
+				// position: absolute;
 				display: inline-block;
-				position: absolute;
-				// top: -100px;
+				padding-bottom: 10px;
+				margin-top: -40px;
 				width: 100%;
-				height: 80px;
 				max-height: 0;
-				transition: max-height 0.3s ease-in;
+				transition: all 0.3s;
 
-				z-index: 1;
+				z-index: -1;
+			}
+
+			ul li {
+				padding: 20px 25px;
+				border-bottom: 1px solid $lightGrey;
 			}
 			
 			input[type=checkbox] {
@@ -167,11 +233,15 @@
 			}
 
 			input[type=checkbox]:checked {
-				~ ul {
-					position: relative;
-					// top: 0;
-					max-height: 80px;
+				~ label {
+					background-color: $lightGrey;
+				}
 
+				~ ul {
+					
+					max-height: 300px;
+					margin: 0;
+					transition: all .3s;
 				}
 			}
 		}
@@ -184,59 +254,6 @@
 			flex-wrap: wrap;
 
 			padding-top: 50px;
-		}
-
-		&-card {
-			position: relative;
-			width: 442px;
-			height: 525px;
-
-			margin-bottom: 50px;
-			background-color: #ccc;
-			overflow: hidden;
-
-			img {
-				position: relative;
-				width: 100%;
-				height: 100%;
-
-				object-fit: cover;
-				object-position: center;
-				
-				filter: brightness(60%);
-
-				transition: .3s;
-			}
-
-			.projects__card {
-				&-text {
-					margin-left: 100%;
-					transition: .5s;
-				}
-
-				&-link {
-					background-color: #f4f4f4;
-					transition: .5s;
-				}
-			}
-
-			&:hover {
-				img {
-					filter: brightness(90%)
-				}
-
-				.projects__card {
-					&-text {
-						margin-left: 0;
-						transition: .5s;
-					}
-	
-					&-link {
-						background-color: $mainColor;
-						transition: .5s;
-					}
-				}
-			}
 		}
 	}
 
@@ -289,6 +306,86 @@
 
 		&-next {
 			background-image: url('../img/icons/arrow-right.png');
+		}
+	}
+}
+
+@media only screen and (max-width: 1050px) {
+	.projects {
+		&__card {
+			width: 40vw;
+			min-width: 300px; 
+			max-width: 442px;
+			height: calc(40vw * 1.187);
+		}
+	}
+}
+
+@media only screen and (max-width: 767px) {
+
+	.projects {
+		&__catalog {
+			padding-top: 0;
+
+			.content {
+				padding: 0;
+			}
+		}
+		&__card {
+			min-width: 280px; 
+		}
+
+		&__filters {
+			display: none;
+
+			&--mobile {
+				display: flex;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 570px) {
+	.projects {
+		&__card {
+			width: 100%;
+			max-width: 100vw;
+			height: calc(100vw * 1.484);
+			max-height: 500px;
+
+			&:nth-child(n+4) {
+				display: none;
+			}
+
+			img {
+				filter: brightness(90%)
+			}
+
+			&-info {
+				width: 100%;
+			}
+	
+			&-text {
+				width: 100%;
+				margin-left: 0;
+			}
+
+			&-link {
+				background-color: $mainColor;
+			}
+		}
+
+		&__fs {
+			&-project {
+				height: calc(100vw * 1.2);
+			}
+			&-info {
+				width: 100%;
+			}
+		}
+		
+		&__pagination {
+			display: none;
 		}
 	}
 }

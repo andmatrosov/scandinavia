@@ -152,6 +152,7 @@ section {
 
 
 .header {
+	z-index: 999;
 
 	.container {
 		display: flex;
@@ -1135,8 +1136,6 @@ section {
 			max-width: 400px;
 		}
 	}
-
-
 	
 	.swiper {
 		&-button{
@@ -1167,7 +1166,6 @@ section {
 		padding: 0;
 		left: 0;
 		top: 0;
-		z-index: 1;
 		color: #fff;
 		transition: .3s;
 
@@ -1367,6 +1365,12 @@ section {
 		}
 		> span {
 			font-size: 14px;
+		}
+	}
+
+	.footer {
+		&--desktop {
+			padding: 0 10px;
 		}
 	}
 }
