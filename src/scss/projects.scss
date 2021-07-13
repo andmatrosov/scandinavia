@@ -203,12 +203,26 @@
 			overflow: hidden;
 
 			label {
+				position: relative;
 				cursor: pointer;
 				display: inline-block;
 				background-color: #fff;
 				padding: 20px 25px;
 				margin-bottom: 10px;
 				z-index: 1;
+				
+				&:after {
+					content: "";
+					position: absolute;
+					top: 25px;
+					left: 83px;
+
+					width: 9px;
+					height: 9px;
+
+					background: url(../svg/next.svg) no-repeat center center;
+					transition: .3s;
+				}
 			}
 
 			ul {
@@ -224,8 +238,16 @@
 			}
 
 			ul li {
-				padding: 20px 25px;
 				border-bottom: 1px solid $lightGrey;
+
+				a {
+					display: block;
+					padding: 20px 25px;
+					&:hover {
+						background-color: rgba($lightGrey, .5);
+						cursor: pointer;
+					}
+				}
 			}
 			
 			input[type=checkbox] {
@@ -235,12 +257,17 @@
 			input[type=checkbox]:checked {
 				~ label {
 					background-color: $lightGrey;
+
+					&:after {
+						transform: rotate(90deg);
+					}
 				}
 
 				~ ul {
 					
 					max-height: 300px;
-					margin: 0;
+					margin-top: -10px;
+					z-index: 1;
 					transition: all .3s;
 				}
 			}
