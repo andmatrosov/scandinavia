@@ -253,7 +253,17 @@
 			justify-content: space-between;
 			flex-wrap: wrap;
 
-			padding-top: 50px;
+			padding: 50px 25px 0;	
+		}
+		
+
+		#more-projects {
+			display: none;
+		}
+		&-more {
+			display: none;
+			background-color: $mainColor;
+			margin: 0 auto;
 		}
 	}
 
@@ -345,6 +355,16 @@
 	}
 }
 
+@media only screen and (max-width: 625px) {
+	.projects {
+		&__catalog {
+			&-list {
+				padding: 50px 0 0;
+			}
+		}
+	}
+}
+
 @media only screen and (max-width: 570px) {
 	.projects {
 		&__card {
@@ -381,6 +401,14 @@
 			}
 			&-info {
 				width: 100%;
+			}
+		}
+
+		&__catalog {
+			
+
+			&-more {
+				display: inline-block;
 			}
 		}
 		
