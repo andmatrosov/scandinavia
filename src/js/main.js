@@ -8,6 +8,8 @@ window.onload = () => {
     console.log('Задание высоты при загрузке')
     aboutImgResize('mobile');
   }
+
+  headerBg();
 };
 
 window.addEventListener('resize', () => {
@@ -85,9 +87,18 @@ let mobileMenuBtns = [
       document.querySelector('.humburger'),
       document.querySelector('.mobile-menu__close')
     ],
-    mobileMenu = document.querySelector('.mobile-menu');
+    mobileMenu = document.querySelector('.mobile-menu'),
+    mobileMenuLinks = [].slice.call(document.querySelectorAll('.mobile-menu__link'));
 
+  // скрытие меню после нажатия на пункт
+mobileMenuLinks.forEach((event) => {
+  event.addEventListener('click', (e) => {
+    // e.preventDefault()
+    mobileMenu.classList.remove('mobile-menu--active')
+  })
+})
 
+// Открытие и закрыте мобильного меню
 mobileMenuBtns.forEach((event) => {
   event.addEventListener('click', (e) => {
     e.preventDefault()
@@ -98,7 +109,6 @@ mobileMenuBtns.forEach((event) => {
 
 // Отключить действие поумолчанию у ссылок
 let prevDef = Array.prototype.slice.call(document.querySelectorAll('.prevDef'));
-
 
 prevDef.forEach((event) => {
   event.addEventListener('click', (e) => {

@@ -165,6 +165,7 @@ section {
 		display: flex;
 		align-items: center;
 		margin-left: 80px;
+		// color: #fff;
 		&-img {
 			width: 43px;
 			height: 43px;
@@ -1168,9 +1169,12 @@ section {
 		top: 0;
 		color: #fff;
 		transition: .3s;
+		
 
 		&__logo {
 			margin-left: 0;
+			color: #fff;
+			
 			&-img {
 				width: 33px;
 				height: 33px;
