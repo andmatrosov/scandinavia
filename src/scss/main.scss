@@ -1,10 +1,9 @@
-@import 'normalize';
-@import 'fonts';
-@import 'variables';
-@import 'mixins';
+@import "normalize";
+@import "fonts";
+@import "variables";
+@import "mixins";
 
-
-//Styles 
+//Styles
 *,
 *::before,
 *::after {
@@ -50,11 +49,11 @@ body {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	transition: all .3s ease;
+	transition: all 0.3s ease;
 	z-index: 999;
 
 	&.loaded {
-		transition: all .3s ease;
+		transition: all 0.3s ease;
 		transform: translateY(-100%);
 		opacity: 0;
 	}
@@ -100,30 +99,28 @@ body {
 	animation: spin 1.5s linear infinite;
 }
 
-
-
 @-webkit-keyframes spin {
-	0%   {
-			-webkit-transform: rotate(0deg);
-			-ms-transform: rotate(0deg);
-			transform: rotate(0deg);
+	0% {
+		-webkit-transform: rotate(0deg);
+		-ms-transform: rotate(0deg);
+		transform: rotate(0deg);
 	}
 	100% {
-			-webkit-transform: rotate(360deg);
-			-ms-transform: rotate(360deg);
-			transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+		transform: rotate(360deg);
 	}
 }
 @keyframes spin {
-	0%   {
-			-webkit-transform: rotate(0deg);
-			-ms-transform: rotate(0deg);
-			transform: rotate(0deg);
+	0% {
+		-webkit-transform: rotate(0deg);
+		-ms-transform: rotate(0deg);
+		transform: rotate(0deg);
 	}
 	100% {
-			-webkit-transform: rotate(360deg);
-			-ms-transform: rotate(360deg);
-			transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+		transform: rotate(360deg);
 	}
 }
 
@@ -140,7 +137,7 @@ section {
 .content {
 	max-width: 1070px;
 	margin: 0 auto;
-	
+
 	&__header {
 		text-align: center;
 	}
@@ -149,7 +146,6 @@ section {
 		position: relative;
 	}
 }
-
 
 .header {
 	z-index: 11;
@@ -161,7 +157,7 @@ section {
 	padding: 18px 0;
 	color: $darkGrey;
 
-	&__logo{
+	&__logo {
 		display: flex;
 		align-items: center;
 		margin-left: 80px;
@@ -171,7 +167,6 @@ section {
 			height: 43px;
 
 			margin-right: 19px;
-
 
 			img {
 				width: 100%;
@@ -187,19 +182,19 @@ section {
 	}
 }
 
-.menu	{
+.menu {
 	display: flex;
 	align-items: center;
 	margin-right: 80px;
 
 	&__item {
 		display: inline-block;
-		margin-left: 120px;	
+		margin-left: 120px;
 
 		text-transform: uppercase;
 
 		&:first-child {
-			margin-left: 0;	
+			margin-left: 0;
 		}
 
 		&:hover a {
@@ -217,13 +212,13 @@ section {
 	height: 100%;
 	padding: 20px 25px;
 	background-color: $darkGrey;
-	box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, .4);
-	transition: all .3s;
+	box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.4);
+	transition: all 0.3s;
 	overflow: hidden;
 	z-index: 99;
 
 	&--active {
-	left: 0;
+		left: 0;
 	}
 
 	&__close {
@@ -233,7 +228,7 @@ section {
 		width: 63px;
 		height: 53px;
 		margin: -20px -25px;
-		
+
 		&-symbol {
 			position: relative;
 			display: block;
@@ -316,7 +311,7 @@ section {
 	display: none;
 }
 
-.btn	{
+.btn {
 	display: inline-block;
 	padding: 23px 62px;
 
@@ -326,7 +321,7 @@ section {
 	font-size: 18px;
 	line-height: 1;
 	text-transform: uppercase;
-	transition: .2s;
+	transition: 0.2s;
 
 	&:hover {
 		background-color: $mainColor;
@@ -337,8 +332,8 @@ section {
 	@extend %FuturaM;
 	font-size: 60px;
 	line-height: 60px;
-	
-	&--center{
+
+	&--center {
 		text-align: center;
 	}
 }
@@ -357,7 +352,7 @@ section {
 	min-height: 550px;
 	height: calc(100vh - 79px);
 	padding: 0;
-	
+
 	&__projects {
 		display: none;
 	}
@@ -377,7 +372,7 @@ section {
 		background-position: center center;
 		background-repeat: no-repeat;
 		background-size: cover;
-		box-shadow: inset 10000px 10000px rgba(60, 70, 90, .5);
+		box-shadow: inset 10000px 10000px rgba(60, 70, 90, 0.5);
 	}
 
 	&__title {
@@ -392,7 +387,7 @@ section {
 		font-size: 60px;
 		line-height: 1;
 		text-transform: uppercase;
-		
+
 		&::before {
 			content: "";
 
@@ -417,7 +412,7 @@ section {
 		font-size: 18px;
 		line-height: 1;
 		text-transform: uppercase;
-		transition: .2s;
+		transition: 0.2s;
 
 		&:hover {
 			background-color: $mainColor;
@@ -455,7 +450,7 @@ section {
 			}
 			a {
 				color: #fff;
-				transition: .2s;
+				transition: 0.2s;
 				&:hover {
 					font-weight: bold;
 				}
@@ -496,7 +491,7 @@ section {
 .about {
 	padding-top: 100px;
 	padding-bottom: 50px;
-	
+
 	&__main {
 		display: flex;
 		flex-direction: row;
@@ -515,7 +510,6 @@ section {
 	&__subtitle {
 		position: relative;
 		margin-bottom: 90px;
-
 
 		&:after {
 			content: "";
@@ -544,7 +538,7 @@ section {
 		margin-left: 10px;
 		transform: translate(-10px, -10px);
 		box-shadow: 10px 10px 0px 0px $mainColor;
-		
+
 		&:hover {
 			color: #fff;
 
@@ -553,7 +547,7 @@ section {
 		}
 
 		&-tablet {
-				display: none;
+			display: none;
 		}
 	}
 
@@ -600,7 +594,7 @@ section {
 		&:hover {
 			.slider__text {
 				top: 0;
-				@include opacityBg(0.7)
+				@include opacityBg(0.7);
 			}
 		}
 	}
@@ -616,9 +610,9 @@ section {
 		font-size: 16px;
 		color: #fff;
 
-		@include opacityBg(0.0);
+		@include opacityBg(0);
 
-		transition: .5s;
+		transition: 0.5s;
 
 		&-title {
 			margin-top: 0;
@@ -670,6 +664,10 @@ section {
 		margin-bottom: 60px;
 	}
 
+	&-container {
+		overflow: hidden;
+	}
+
 	&-pagination-bullet {
 		width: 5px;
 		height: 5px;
@@ -679,13 +677,11 @@ section {
 		opacity: 1;
 
 		&-active {
-		background: $mainColor;
-
+			background: $mainColor;
 		}
 	}
 
 	&-button {
-		
 		&-prev {
 			content: url(../img/icons/arrow-left.png);
 			width: 16px;
@@ -714,7 +710,7 @@ section {
 
 	&__list {
 		display: grid;
-		grid-template-columns: .6fr .6fr 1.2fr .6fr .6fr;
+		grid-template-columns: 0.6fr 0.6fr 1.2fr 0.6fr 0.6fr;
 		font-size: 18px;
 		@extend %FuturaL;
 	}
@@ -764,7 +760,6 @@ section {
 				margin-bottom: 14px;
 				font-size: 24px;
 				@extend %FuturaM;
-
 
 				span {
 					display: block;
@@ -819,12 +814,11 @@ section {
 	background-color: $darkGrey;
 	color: #fff;
 
-	
 	&--mobile {
 		display: none;
 		a {
 			color: #fff;
-			
+
 			@extend %Futura;
 
 			text-transform: uppercase;
@@ -835,7 +829,7 @@ section {
 			justify-content: space-around;
 			align-items: center;
 			padding: 0 30px 35px;
-			
+
 			a {
 				font-size: 14px;
 			}
@@ -882,7 +876,7 @@ section {
 			position: relative;
 			color: #fff;
 
-			transition: all .3s ease;
+			transition: all 0.3s ease;
 
 			&::before {
 				content: "";
@@ -895,7 +889,7 @@ section {
 			}
 
 			&:hover {
-				opacity: .7;
+				opacity: 0.7;
 			}
 		}
 	}
@@ -916,11 +910,11 @@ section {
 			}
 		}
 
-		&-social{
+		&-social {
 			p > a {
 				text-decoration: underline;
 			}
-		}	
+		}
 	}
 
 	&__copy {
@@ -955,7 +949,7 @@ section {
 		font-size: 16px;
 	}
 
-	.fs{
+	.fs {
 		&__title {
 			font-size: 50px;
 		}
@@ -983,11 +977,10 @@ section {
 				margin: 50px 0 0;
 				font-size: 50px;
 
-	
 				&-award {
 					margin-bottom: 14px;
 					font-size: 24px;
-	
+
 					span {
 						font-size: 62px;
 					}
@@ -1020,7 +1013,7 @@ section {
 		font-size: 16px;
 		padding: 18px 48px;
 	}
-	
+
 	.menu {
 		&__item {
 			margin-left: 80px;
@@ -1030,7 +1023,7 @@ section {
 			}
 		}
 	}
-	
+
 	.fs {
 		&__title {
 			font-size: 40px;
@@ -1041,7 +1034,7 @@ section {
 		padding-bottom: 0;
 		&__text {
 			margin-right: 20px;
-			&>.about__btn {
+			& > .about__btn {
 				display: none;
 			}
 		}
@@ -1076,7 +1069,7 @@ section {
 	}
 }
 
-@media only screen and (max-width: 909px){
+@media only screen and (max-width: 909px) {
 	.content {
 		&__swiper {
 			max-width: 90%;
@@ -1084,23 +1077,23 @@ section {
 	}
 
 	.swiper {
-		&-button{
-			&-prev{
+		&-button {
+			&-prev {
 				left: -20px;
 			}
-			&-next{
+			&-next {
 				right: -20px;
 			}
 		}
 	}
-	
+
 	.about {
 		padding-top: 50px;
 
 		&__main {
 			flex-direction: column-reverse;
 		}
-		
+
 		&__image {
 			max-width: 100%;
 			width: 100%;
@@ -1137,13 +1130,13 @@ section {
 			max-width: 400px;
 		}
 	}
-	
+
 	.swiper {
-		&-button{
-			&-prev{
+		&-button {
+			&-prev {
 				left: -35px;
 			}
-			&-next{
+			&-next {
 				right: -35px;
 			}
 		}
@@ -1168,13 +1161,12 @@ section {
 		left: 0;
 		top: 0;
 		color: #fff;
-		transition: .3s;
-		
+		transition: 0.3s;
 
 		&__logo {
 			margin-left: 0;
 			color: #fff;
-			
+
 			&-img {
 				width: 33px;
 				height: 33px;
@@ -1191,21 +1183,21 @@ section {
 			width: 63px;
 			height: 53px;
 			padding: 14px 0;
-	
+
 			.icon {
-					fill: #fff;
+				fill: #fff;
 			}
 		}
 
 		&--light {
 			background-color: #fff;
-			transition: .3s;
-			box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, .2);
+			transition: 0.3s;
+			box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.2);
 
-			.header{
+			.header {
 				&__logo {
 					&-text {
-						color:$darkGrey;
+						color: $darkGrey;
 					}
 				}
 			}
@@ -1234,7 +1226,7 @@ section {
 		padding: 16px 0;
 		width: 63px;
 		height: 53px;
-		
+
 		span {
 			display: block;
 			width: 25px;
@@ -1288,7 +1280,7 @@ section {
 		&__main {
 			flex-direction: column-reverse;
 		}
-		
+
 		&__image {
 			max-width: 100%;
 			width: 100%;
@@ -1317,13 +1309,13 @@ section {
 			}
 		}
 	}
-	
+
 	.achievements {
 		&__list {
 			grid-template-rows: 1fr 1fr 1fr;
 			grid-template-columns: 1fr 1fr;
 		}
-		
+
 		&__item {
 			min-width: 150px;
 
@@ -1334,14 +1326,12 @@ section {
 			&:nth-child(2) {
 				grid-column: 2/3;
 				grid-row: 2/3;
-
 			}
 			&:nth-child(3) {
 				margin-top: -40px;
 				// width: 22%;
 				grid-column: 1/3;
 				grid-row: 1/2;
-
 			}
 			&:nth-child(4) {
 				grid-column: 1/2;
@@ -1351,16 +1341,15 @@ section {
 				grid-column: 2/3;
 				grid-row: 3/4;
 			}
-			
+
 			&-header {
 				margin: 40px 0 0;
 				font-size: 40px;
 
-	
 				&-award {
 					margin-bottom: 14px;
 					font-size: 24px;
-	
+
 					span {
 						font-size: 48px;
 					}
@@ -1385,7 +1374,7 @@ section {
 			display: none;
 		}
 	}
-	
+
 	.slider {
 		&--mobile {
 			display: flex;
@@ -1411,7 +1400,7 @@ section {
 
 			font-size: 18px;
 			text-align: center;
-			@include opacityBg(.7);
+			@include opacityBg(0.7);
 		}
 	}
 
@@ -1431,15 +1420,15 @@ section {
 		&__header {
 			margin-bottom: 0;
 		}
-		&-slider{
+		&-slider {
 			&__title {
 				margin-bottom: 80px;
-				&:after{
+				&:after {
 					left: 50%;
 					transform: translateX(-50%);
 				}
 			}
-			&__text{
+			&__text {
 				top: 0;
 			}
 		}
@@ -1484,7 +1473,7 @@ section {
 			}
 		}
 	}
-	
+
 	.footer {
 		&--desktop {
 			display: none;
@@ -1503,4 +1492,4 @@ section {
 
 // @media only screen and (min-width: 992px){ ... }
 
-@import 'projects';
+@import "projects";
