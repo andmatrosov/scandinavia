@@ -33,7 +33,6 @@ const projectsSlider = new Swiper('.our-projects-slider', {
 
 });
 
-
 const teamSlider = new Swiper('.team-slider', {
   // Optional parameters
   direction: 'horizontal',
